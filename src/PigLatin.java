@@ -10,7 +10,7 @@ public class PigLatin {
         Scanner sc = new Scanner(System.in);
         System.out.println("type a word");
         userInput = sc.next();
-        char result = userInput.charAt(0);
+        char result = userInput.toLowerCase().charAt(0);
         if (result == 'a') {
             System.out.println("vowel!");
         }
