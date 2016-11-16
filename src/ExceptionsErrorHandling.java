@@ -4,7 +4,11 @@
 import java.util.Scanner;
 
 public class ExceptionsErrorHandling {
-    public static void getInfo() {
+    String[] names = {"Jess","Jen", "John"};
+    String[] why = {"it's fun", "good pay", "I like typing"};
+    int[] ages = {24,27,22};
+
+    public static void addInfo() {
         String name, whyCode;
         int age;
         Scanner sc = new Scanner(System.in);
@@ -18,10 +22,12 @@ public class ExceptionsErrorHandling {
     }
 
     public static void studentInfo(String name, int age, String why) {
-        System.out.println("Your name is "+name+". You're "+age+" years old.\nYou want to program because\n"+why);
+        System.out.println("Your name is "+name+". You're "+age+" years old.\nYou want to program because"+why);
     }
 
     public static void main(String[] args) {
-        getInfo();
+        addInfo();
+        System.out.println(names[1]);
+
     }
 }
