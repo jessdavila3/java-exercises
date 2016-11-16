@@ -27,7 +27,6 @@ public class ExceptionsErrorHandling {
 
     public static void main(String[] args) {
         addInfo();
-        System.out.println(names[1]);
 
     }
 }
