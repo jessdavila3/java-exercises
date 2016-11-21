@@ -14,7 +14,7 @@ public class LuckyColor {
         PURPLE(.5),
         PINK(1);
 
-        private double discountPercentage;
+        private final double discountPercentage;
 
         Colors(double percentage) {
             this.discountPercentage = percentage;
@@ -26,11 +26,14 @@ public class LuckyColor {
     }
 
     public static void main(String[] args) {
-        DecimalFormat df = new DecimalFormat("###0.00");
         double totalCost;
+
+        DecimalFormat df = new DecimalFormat("###0.00");
         Scanner input = new Scanner(System.in);
+
         System.out.println("How much?");
         totalCost = input.nextDouble();
+        System.out.println("Today you get a green discount...");
         totalCost = totalCost - Colors.GREEN.applyDiscount(totalCost);
         System.out.println("total: $" + df.format(totalCost));
     }
