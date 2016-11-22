@@ -1,3 +1,5 @@
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
@@ -6,6 +8,8 @@ import java.util.Scanner;
 public class BattingStats {
 
     public static void main(String[] args) {
+        DecimalFormat df = new DecimalFormat("#.###");
+        df.setRoundingMode(RoundingMode.CEILING);
         int numAtBats;
         double total = 0;
 
@@ -15,13 +19,14 @@ public class BattingStats {
         numAtBats = input.nextInt();
         int[][] average = new int[numAtBats][numAtBats];
 
+
         for (int i = 0; i < numAtBats; i++) {
             average[i][i] = getNumBases(i);
             total += average[i][i];
         }
         total /= numAtBats;
 
-        System.out.println("Your average is " + total);
+        System.out.println("Your average is " + df.format(total));
     }
 
     public static int getNumBases(int i) {
