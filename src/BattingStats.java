@@ -1,5 +1,6 @@
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -34,7 +35,17 @@ public class BattingStats {
         int numOfBases;
         System.out.println("How many bases on the bat " + (i+1) +"?");
         numOfBases = input.nextInt();
-        return numOfBases;
+        try {
+            if (numOfBases < 0 || numOfBases > 4) {
+                System.out.println("Enter a positive number between 1 - 4");
+                return getNumBases(i);
+            } else {
+                return numOfBases;
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Enter a positive number between 1 - 4");
+            return getNumBases(i);
+        }
     }
 
 
