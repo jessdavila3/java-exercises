@@ -7,7 +7,7 @@ public class BattingStats {
 
     public static void main(String[] args) {
         int numAtBats;
-        int total = 0;
+        double total = 0;
 
         Scanner input = new Scanner(System.in);
 
@@ -16,8 +16,7 @@ public class BattingStats {
         int[][] average = new int[numAtBats][numAtBats];
 
         for (int i = 0; i < numAtBats; i++) {
-            average[i][i] = numBases();
-            System.out.println(average[i][i]);
+            average[i][i] = getNumBases(i);
             total += average[i][i];
         }
         total /= numAtBats;
@@ -25,13 +24,13 @@ public class BattingStats {
         System.out.println("Your average is " + total);
     }
 
-    public static int numBases() {
+    public static int getNumBases(int i) {
         Scanner input = new Scanner(System.in);
         int numOfBases;
-        System.out.println("How many bases?");
+        System.out.println("How many bases on the bat " + (i+1) +"?");
         numOfBases = input.nextInt();
         return numOfBases;
-
     }
+
 
 }
