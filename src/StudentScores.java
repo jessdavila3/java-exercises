@@ -1,14 +1,39 @@
+import java.util.*;
+
 /**
  * Created by jessedavila on 11/28/16.
  */
 public class StudentScores {
     public static void main(String[] args) {
+        String firstName, lastName;
+        int score, keepGoing;
 
-        Student newStudent = new Student();
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Student> students = new ArrayList<>();
 
-        // use the Scanner;
-        newStudent.firstName = "Bob";
-        newStudent.lastName = "Belcher";
-        newStudent.score = 5;
+        System.out.println("Welcome to this thing");
+
+        do {
+            System.out.println("What is the first name?");
+            firstName = sc.nextLine();
+            System.out.println("And the last name?");
+            lastName = sc.nextLine();
+            System.out.println("Score?");
+            score = sc.nextInt();
+
+            Student newStudent = new Student(firstName,lastName,score);
+            students.add(newStudent);
+
+            System.out.println("Continue?");
+            keepGoing = sc.nextInt();
+        } while (keepGoing == 1);
+
+
+        for(Student student: students) {
+            System.out.println(student.lastName +" " + student.firstName);
+        }
+
+
+
     }
 }
