@@ -26,11 +26,14 @@ public class StudentScores {
 
             System.out.println("Continue?");
             keepGoing = sc.nextInt();
+            sc.nextLine();
         } while (keepGoing == 1);
 
-
+        Collections.sort(students);
         for(Student student: students) {
             System.out.println(student.lastName +" " + student.firstName);
+            System.out.println("Score: " + student.score);
+            System.out.println("-----");
         }
 
 
