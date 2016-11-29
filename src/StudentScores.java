@@ -5,8 +5,8 @@ import java.util.*;
  */
 public class StudentScores {
     public static void main(String[] args) {
-        String firstName, lastName;
-        int score, keepGoing;
+        String firstName, lastName, keepGoing;
+        int score;
 
         Scanner sc = new Scanner(System.in);
         ArrayList<Student> students = new ArrayList<>();
@@ -15,23 +15,24 @@ public class StudentScores {
 
         do {
             System.out.println("What is the first name?");
-            firstName = sc.nextLine();
+            firstName = sc.nextLine().trim();
             System.out.println("And the last name?");
-            lastName = sc.nextLine();
+            lastName = sc.nextLine().trim();
             System.out.println("Score?");
-            score = sc.nextInt();
+            score = Integer.parseInt(sc.nextLine());
 
             Student newStudent = new Student(firstName,lastName,score);
             students.add(newStudent);
 
             System.out.println("Continue?");
-            keepGoing = sc.nextInt();
-            sc.nextLine();
-        } while (keepGoing == 1);
+            keepGoing = sc.nextLine();
+        } while (keepGoing.equalsIgnoreCase("y"));
 
-        Collections.sort(students);
+        Collections.sort(students); //sorts the last names then first names if need be.
+
+        System.out.println("-----"); //iterates through ArrayList to display all info, sorted.
         for(Student student: students) {
-            System.out.println(student.lastName +" " + student.firstName);
+            System.out.println(student.lastName +", " + student.firstName);
             System.out.println("Score: " + student.score);
             System.out.println("-----");
         }
