@@ -17,6 +17,7 @@ public class Student implements Comparable<Student> {
         this.firstName = firstName;
         this.lastName = lastName;
         this.score = score;
+
     }
 }
 
