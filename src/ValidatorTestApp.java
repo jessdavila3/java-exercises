@@ -14,7 +14,7 @@ public class ValidatorTestApp {
         System.out.println("The user entered " + userInteger);
 
 
-        validator.setNumber(4);
-        System.out.println(validator.getNumber());
+        /*validator.setNumber(4);
+        System.out.println(validator.getNumber());*/
     }
 }

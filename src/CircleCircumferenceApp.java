@@ -6,27 +6,23 @@ import java.util.Scanner;
  */
 public class CircleCircumferenceApp {
     public static void main(String[] args) {
-        double radius;
         String keepGoing;
         Scanner sc = new Scanner(System.in);
-        ArrayList<Circle> circles = new ArrayList<>();
 
         System.out.println("Welcome to the circle app...\n");
         do {
-            radius = getRadius(sc);
-            Circle newCircle = new Circle(radius);
-            circles.add(newCircle);
+            Circle newCircle = new Circle(getRadius(sc));
 
-            System.out.println(newCircle.getFormattedCircumference());
-            System.out.println(newCircle.getFormattedArea());
+            System.out.println("\n-----\n"+newCircle.getFormattedCircumference());
+            System.out.println(newCircle.getFormattedArea()+"\n-----\n");
 
             System.out.println("Would you like to ask about another circle?");
             keepGoing = sc.nextLine();
         } while (keepGoing.equalsIgnoreCase("y"));
-        System.out.println("Goodbye!\nYou asked about " + circles.size() + " circles");
+        System.out.println("Goodbye!\nYou asked about " + Circle.getObjectCount() + " circles");
     }
 
-    public static double getRadius(Scanner sc) {
+    private static double getRadius(Scanner sc) {
         System.out.println("What is the circle's radius?");
         try {
             return Double.parseDouble(sc.nextLine());

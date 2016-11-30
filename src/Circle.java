@@ -4,10 +4,12 @@
 import java.text.DecimalFormat;
 
 public class Circle {
-    double radius;
+    private double radius;
+    private static int counter = 0;
 
     public Circle(double radius) {
         this.radius = radius;
+        counter++;
     }
 
     public double getCircumference() {
@@ -32,7 +34,7 @@ public class Circle {
     }
 
     public static int getObjectCount() {
-        return 0;
+        return counter;
     }
 
 }
