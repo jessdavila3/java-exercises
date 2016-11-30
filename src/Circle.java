@@ -23,7 +23,7 @@ public class Circle {
     }
 
     public String getFormattedArea() {
-        return "Area is " + formatNumber(getArea());
+        return "Area is: " + formatNumber(getArea());
     }
 
     private String formatNumber(double x) {
