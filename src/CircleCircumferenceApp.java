@@ -12,6 +12,7 @@ public class CircleCircumferenceApp {
 
         ArrayList<Circle> circles = new ArrayList<>();
 
+        System.out.println("Welcome to the circle app...\n");
         do {
         System.out.println("What is the circle's radius?");
         radius = Double.parseDouble(sc.nextLine());
