@@ -8,6 +8,7 @@ public class RoshamboApp {
         System.out.println("Hey, let's play Roshambo");
         System.out.println("Who do you want to play against?");
         System.out.println("1. Rocks Player\n2. Computer Player\n");
+        ComputerPlayer opponent = new ComputerPlayer("Opponent");
         System.out.println("Select a move\n1.Rock\n2.Paper\n3.Scissors");
 
 
