@@ -12,6 +12,5 @@ public class RoshamboApp {
         System.out.println("Select a move\n1.Rock\n2.Paper\n3.Scissors");
 
 
-
     }
 }
