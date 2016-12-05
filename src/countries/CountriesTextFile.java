@@ -11,9 +11,9 @@ import java.nio.file.Paths;
  * Created by jessedavila on 12/5/16.
  */
 public class CountriesTextFile {
-    String folder = "src/countries";
-    Path folderPath = Paths.get(folder);
-    Path filePath = Paths.get(folder, "countries.txt");
+    private String folder = "src/countries";
+    private Path folderPath = Paths.get(folder);
+    private Path filePath = Paths.get(folder, "countries.txt");
     private List<String> names = new ArrayList<>();
 
 
@@ -48,11 +48,11 @@ public class CountriesTextFile {
     public void writeFile() throws IOException {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please type the name of a country");
-        names.add(sc.nextLine().toString());
+        String name = (sc.nextLine());
         try (FileWriter fileWriter = new FileWriter(filePath.toFile());
              BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
              PrintWriter output = new PrintWriter(bufferedWriter);) {
-            output.println(names);
+            output.append(name);
         }
         System.out.println("Thank you");
     }
